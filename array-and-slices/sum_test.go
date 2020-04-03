@@ -73,8 +73,20 @@ func TestSumAllTails(t *testing.T) {
 	})
 }
 
-// func BenchmarkRepeat(b *testing.B) {
-// 	for i := 0; i < b.N; i++ {
-// 		Repeat("a", 5)
-// 	}
-// }
+func BenchmarkSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sum([]int{1, 2, 3, 4, 5})
+	}
+}
+
+func BenchmarkSumAll(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SumAll([]int{1, 2, 3}, []int{3, 4, 5})
+	}
+}
+
+func BenchmarkSumAllTails(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SumAll([]int{1, 2, 3}, []int{3, 4})
+	}
+}
